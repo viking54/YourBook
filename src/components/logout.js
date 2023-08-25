@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-export const onLogout = async (router) => {
+export const onLogout = async () => {
   
   try {
     const url = "api/users/logout";
@@ -12,7 +12,7 @@ export const onLogout = async (router) => {
       style: { backgroundColor: "darkgreen", color: "white" },
     });
 
-    router.push("/");
+    window.location.href = "/";
   } catch (error) {
     toast.error(error.response.data.message);
   }
