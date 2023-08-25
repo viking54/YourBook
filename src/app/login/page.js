@@ -31,7 +31,7 @@ const Login = () => {
       });
 
       setLoading(false);
-      await router.push("/about");
+      router.push("/about");
 
       console.log(res.message);
     } catch (error) {
