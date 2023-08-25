@@ -17,7 +17,7 @@ export function middleware(request:NextRequest) {
     //   return NextResponse.rewrite(new URL('/about', request.url))
     // }
     
-    if (!token && path.match('/about')) {
+    if (!token && path.includes('/about')) {
       return NextResponse.redirect(new URL('/', request.nextUrl))
     }
    
