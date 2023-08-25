@@ -1,10 +1,11 @@
 import { connectDb } from "@/helper/db";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
+import { middleware as authMiddleware } from "@/middleware";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 connectDb();
-
+export const middleware = [authMiddleware]; 
 export async function POST(request) {
   try {
     const { email, password } = await request.json();
@@ -54,7 +55,7 @@ export async function POST(request) {
       { message: "Logged in" },
       { status: 201 }
     );
-    response.cookies.set("token", token, {
+     response.cookies.set("token", token, {
       httpOnly: true,
     });
 
