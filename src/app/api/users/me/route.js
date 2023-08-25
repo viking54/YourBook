@@ -2,9 +2,9 @@ import { connectDb } from "@/helper/db";
 import { getDataFromToken } from "@/helper/getDataFromToken";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
-import { middleware as authMiddleware } from "@/middleware";
+
 connectDb();
-export const middleware = [authMiddleware]; 
+
 export async function GET(request) {
   try {
     const userId = await getDataFromToken(request);

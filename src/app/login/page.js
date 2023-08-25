@@ -31,7 +31,7 @@ const Login = () => {
       });
 
       setLoading(false);
-      router.push("/about");
+      window.location.href = "/about";
 
       console.log(res.message);
     } catch (error) {
