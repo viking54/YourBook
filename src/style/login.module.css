@@ -1,0 +1,160 @@
+.logincon {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  min-height: 33vw;
+  width: 30vw;
+  background-color: rgb(255, 255, 255);
+  padding: 2.4vw;
+  box-shadow: 2px 2px 4px 4px rgb(114, 10, 3);
+}
+
+.logincon h1 {
+  font-size: 1.5vw;
+}
+.logincon h2 {
+  font-size: 1vw;
+}
+.logincon span {
+  color: #007bff;
+}
+.icon {
+  margin: 0 1vw;
+  height: 1.4vw;
+  width: 1.4vw;
+}
+
+.topbut {
+  gap: 1vw;
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon2 {
+  margin: 3vw auto;
+  height: 9vw;
+  width:9.6vw;
+}
+.logbutton {
+  align-items: center;
+  display: flex;
+  padding: 0.5vw 0.8vw;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.logbutton:hover{
+  background-color: rgb(203, 208, 208);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rounded {
+  margin: 1.2vw;
+  border-top: 3px dotted #000000;
+  border-radius: 5px;
+}
+
+.emlabel {
+  color: rgb(21, 21, 21);
+  font-size: 1vw;
+  font-weight: bold;
+  margin-bottom: 0.3vw;
+}
+.passlabel {
+  color: rgb(21, 21, 21);
+  font-weight: bold;
+  font-size: 1vw;
+  margin-top: 0.4vw;
+  margin-bottom: 0.3vw;
+}
+.form input {
+  width: 100%;
+  background: #ffffff;
+  outline: none;
+  border: 1px solid black;
+  padding: 0.5vw ;
+  color: #000000;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form button {
+  margin-top: 1.4vw;
+  background-color: #06ba63; /* Blue button */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7vw;
+  font-size: 1.4vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+.form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.form button:hover{
+  background-color: rgb(0, 0, 0);
+  color: azure;
+}
+
+.signup{
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1vw;
+  margin-top: 0.8vw;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out;
+}
+.signup:hover{
+  color: #007bff;
+}
+
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 6px solid #50cd0c;
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  margin-top: 1.4vw;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1vw; /* Adjust the margin to move the error message up */
+  text-align: center;
+  font-size: 1vw;
+  background-color: rgba(214, 41, 10, 0.945);
+  padding: 0.3vw;
+  border-radius: 5px;
+}
+
+.msg {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1vw; /* Adjust the margin to move the error message up */
+  text-align: center;
+  font-size: 1vw;
+  background-color: rgba(18, 160, 30, 0.945);
+  padding: 0.3vw;
+  border-radius: 5px;
+}

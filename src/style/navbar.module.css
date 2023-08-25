@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid #dadada;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0,0.9);
+  height: 55px;
+  background: #FCFCFD;
+  padding: 0 2vw;
+}
+
+.container h1 {
+  font-size: 1.3vw;
+  color: #007bff;;
+}
+
+.navthing {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+.navhead {
+  padding: 0.3vw;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2vw;
+
+}
+.navhead:hover
+{
+
+  background-color: rgb(30, 190, 190);
+  box-shadow: 2px 2px 4px rgba(6, 117, 19, 0.9);
+  border-radius: 13px;
+}
+
+
+.navbutt {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.3vw;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 1.2vw;
+
+}
+.navbutt:hover
+{
+
+  background-color: rgb(182, 29, 9);
+  box-shadow: 2px 2px 4px rgba(6, 117, 19, 0.9);
+  border-radius: 13px;
+}
