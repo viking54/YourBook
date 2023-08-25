@@ -31,7 +31,7 @@ const Login = () => {
       });
 
       setLoading(false);
-      router.push("/register");
+      router.push("/about");
 
       console.log(res.message);
     } catch (error) {
