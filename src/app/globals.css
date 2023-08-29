@@ -1,25 +1,28 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html,body{
-  height: 100%;
-  width:100%
-}
-
-.original{
+html,
+body {
   height: 100%;
   width: 100%;
-  position: relative;
+}
+
+.original {
+  height: 100%;
+  width: 100%;
+
 }
 .main {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgb(20, 18, 22);
   width: 100%;
-   height: calc(100% - 110px);
-   background-color: #000000;
- 
- }
+  
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+

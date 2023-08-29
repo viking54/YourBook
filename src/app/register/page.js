@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import styles from "../../style/login.module.css";
+import styles from "@/style/login.module.css"
 import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [data, setData] = useState({
@@ -12,6 +13,8 @@ const Register = () => {
     email: "",
     password: "",
   });
+
+  const route = useRouter();
 
   const [loading, setLoading] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
@@ -35,10 +38,12 @@ const Register = () => {
         verificationCode:"",
         password: "",
       });
+      setVerificationCode("");
       setOnVerify(false);
       toast.success(res.message, {
         style: { backgroundColor: "darkgreen", color: "white" },
       });
+      route.push('/login')
       console.log(res.message);
     } catch (error) {
       setLoading(false);
@@ -48,6 +53,7 @@ const Register = () => {
         verificationCode:"",
         password: "",
       });
+      setVerificationCode("");
       toast.error(error.response.data.message, {
         style: { backgroundColor: "brown", color: "white" },
       });
@@ -77,6 +83,7 @@ const Register = () => {
   };
 
   return (
+    <div className={styles.container}>
     <div className={styles.logincon}>
       {!onverify ? (
         <>
@@ -183,6 +190,7 @@ const Register = () => {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 };

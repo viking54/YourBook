@@ -1,7 +1,6 @@
 import { connectDb } from "@/helper/db";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
-
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 connectDb();
@@ -46,7 +45,7 @@ export async function POST(request) {
       email: user.email,
     };
     //creating token
-    const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, {
       expiresIn: "1d",
     });
 
@@ -55,9 +54,7 @@ export async function POST(request) {
       { message: "Logged in" },
       { status: 201 }
     );
-     response.cookies.set("token", token, {
-      httpOnly: true,
-    });
+     response.cookies.set("token", token);
 
     return response;
   } catch (error) {

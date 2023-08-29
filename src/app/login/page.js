@@ -1,13 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import styles from "../../style/login.module.css";
+import styles from "@/style/login.module.css";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import Cookies from 'js-cookie';
+import { login } from "@/reducer/slice";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+
 const Login = () => {
-  const router = useRouter();
+  const route  = useRouter();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
@@ -26,24 +31,32 @@ const Login = () => {
     try {
       const url = "/api/users/login";
       const { data: res } = await axios.post(url, data);
+    
       toast.success(res.message, {
         style: { backgroundColor: "darkgreen", color: "white" },
       });
-
+       
       setLoading(false);
-     window.location.href = "/about";
-    //done
+     
+      if (Cookies.get('token')) {
+  
+       dispatch(login()); 
+      }
+  
+     route.push('/');
+      //done
       console.log(res.message);
     } catch (error) {
       setLoading(false);
       toast.error(error.response.data.message, {
         style: { backgroundColor: "brown", color: "white" },
       });
-      console.log(error.response.data.message);
+      console.log(error);
     }
   };
 
   return (
+    <div className={styles.container}>
     <div className={styles.logincon}>
       <h1>Sign in</h1>
       <h2>
@@ -104,6 +117,7 @@ const Login = () => {
         Create Account ?{" "}
       </Link>
     </div>
+     </div>
   );
 };
 

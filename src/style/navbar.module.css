@@ -1,41 +1,44 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-bottom: 2px solid #dadada;
-  box-shadow: 2px 2px 4px rgb(0, 0, 0,0.9);
-  height: 55px;
-  background: #FCFCFD;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  overflow-y: auto;
+  width: 5%;
+  float: left;
+  box-shadow: 2px 2px 4px rgba(3, 107, 148, 0.9);
+  height: 100%;
+  background: #0f0f15;
   padding: 0 2vw;
 }
 
-.container h1 {
-  font-size: 1.3vw;
-  color: #007bff;;
+.logoimg {
+  width: 3vw;
+  height: 14vw;
+}
+.logoimg:hover {
+  filter: drop-shadow(2px 2px 4px rgba(8, 223, 235, 0.6));
+}
+.navimg {
+  width: 3vw;
+  height: 3vw;
+  padding: 0.3vw;
 }
 
+.navimg:hover {
+  filter: drop-shadow(2px 2px 4px rgba(8, 223, 235, 0.6));
+}
+.navhead {
+  color: royalblue;
+  font-size: 0.9vw;
+}
 .navthing {
+  margin-top: 2vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 2vw;
 }
-.navhead {
-  padding: 0.3vw;
-  font-weight: bold;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 1.2vw;
-
-}
-.navhead:hover
-{
-
-  background-color: rgb(30, 190, 190);
-  box-shadow: 2px 2px 4px rgba(6, 117, 19, 0.9);
-  border-radius: 13px;
-}
-
 
 .navbutt {
   border: none;
@@ -45,12 +48,51 @@
   font-weight: bold;
   color: rgb(0, 0, 0);
   font-size: 1.2vw;
-
 }
-.navbutt:hover
-{
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 6px solid #50cd0c;
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  animation: spin 1s linear infinite;
+}
 
-  background-color: rgb(182, 29, 9);
-  box-shadow: 2px 2px 4px rgba(6, 117, 19, 0.9);
-  border-radius: 13px;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    float: none;
+    height: auto;
+    box-shadow: none;
+    padding: 2vw 0;
+   background-color: black;
+  }
+  .navthing {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    gap:5vw;
+  }
+
+  .logoimg {
+    display: none;
+  }
+
+  .navimg {
+    width: 7vw;
+    height: 7vw;
+    padding: 0.3vw;
+  }
 }

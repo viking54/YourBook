@@ -8,7 +8,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique:true,
+    unique: true,
   },
   password: {
     type: String,
@@ -16,12 +16,12 @@ const UserSchema = new Schema({
   },
   isVerified: {
     type: Boolean,
-    default:false,
+    default: false,
   },
-  verificationCode:{
-    type:String,
+  verificationCode: {
+    type: String,
   }
-  
+
 });
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);

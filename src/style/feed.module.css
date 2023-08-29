@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap");
+.container {
+  display: flex;
+  position: relative;
+  margin-left: 10%;
+  padding: 3vw;
+}
+.maincontainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.feedContainer {
+  background-color: rgba(45, 43, 43, 0.427);
+  height: auto;
+  width: 45vw;
+  border-radius: 13px;
+  margin-bottom: 3vw;
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3vw;
+
+  margin-bottom: 3vw;
+  overflow-y: auto;
+}
+.rightContainer {
+  position: fixed;
+  margin-left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 3vw 2vw;
+
+  margin-top: 3vw;
+  margin-top: -3vw;
+}
+
+.userDiv {
+  padding: 0.5vw;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #0d72cb;
+}
+
+.userimg {
+  width: 3vw;
+  height: 3vw;
+  padding: 0.3vw;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+}
+.nameuserDiv{
+  gap: 1vw;
+  display: flex;
+
+
+
+}
+.butt {
+  display: flex;
+}
+
+.userName {
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: white;
+  font-size: 2vw;
+}
+
+.userPost {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8vw;
+}
+
+.userPostImage {
+  margin-top: 1.2vw;
+  height: 23vw;
+  width: 43vw;
+  object-fit: cover;
+  border-radius: 13px;
+  box-shadow: #054c94 4px 4px 4px;
+}
+
+.userPostText {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1vw;
+
+  color: white;
+}
+
+.genimg {
+  width: 3vw;
+  height: 3vw;
+  padding: 0.3vw;
+  margin: 0 0.2vw;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.genimg:active {
+  transform: scale(1.7); /* Scale down the button on click */
+}
+.genimg:hover {
+  filter: drop-shadow(2px 2px 4px rgba(5, 245, 125, 0.745));
+}
+
+.newbut {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+.rightfeedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(45, 43, 43, 0.427);
+  height: fit-content;
+  width: 30vw;
+  border-radius: 13px;
+}
+
+.postimg {
+  height: 10vw;
+  width: 9vw;
+  margin: 1vw;
+}
+.postimg:hover {
+  filter: drop-shadow(2px 2px 4px rgba(222, 136, 7, 0.745));
+}
+
+.rightfeedContainer h2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2.4vw;
+
+  color: white;
+}
+.logincon {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  min-height: 33vw;
+  margin-top: 4vw;
+  width: 30vw;
+  background-color: lightskyblue;
+  background-size: cover;
+  padding: 2.4vw;
+}
+.logincon h1{
+  font-size:1.4vw;
+}
+
+.backmg{
+  background-image: url('/images/woman.jpg');
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+
+  .rightContainer {
+    
+    display: none;
+  }
+  .leftContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3vw;
+    margin-left: -6vw;
+    overflow-y: auto;
+  }
+
+  .feedContainer{
+    width:80vw;
+  }
+
+  .userPostImage {
+   
+    height: 40vw;
+    width: 78vw;
+  
+  }
+
+  .userPostText {
+   
+    font-size: 2vw;
+   
+  }
+
+
+}

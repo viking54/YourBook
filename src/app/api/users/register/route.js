@@ -4,6 +4,7 @@ import { NextResponse} from "next/server";
 import bcryptjs from 'bcryptjs'
 import crypto from "crypto";
 import { sendEmail } from "@/helper/mailer";
+
 connectDb();
 
 export async function POST(request)
@@ -36,17 +37,13 @@ export async function POST(request)
         password:hashedPassword,
         verificationCode:verificationCode,
     });
-    console.log("Before save:", newUser);
+  
     await newUser.save();
 
-    return NextResponse.json({message:"OTP Sent to Mail"} , {status:201});
+    return NextResponse.json({message:"OTP Sent to Mail"} , {status:201});p
    } catch (error) {
     return NextResponse.json({message:"Internfal server Error"} , {status:400});
    }
 }
 
 
-export async function GET() {
-    const users = await User.find();
-    return NextResponse.json({users});
-}
