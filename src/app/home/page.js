@@ -14,7 +14,7 @@ const YourHome = () => {
   const [image, setImage] = useState(null); // Changed to null
   const [post,setPost] = useState([]);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
- console.log(post[0]._id);
+
   const dispatch = useDispatch();
   const userr = useSelector((state) => state.user);
  
@@ -198,7 +198,7 @@ const YourHome = () => {
     <div className={styles.container}>
       <div className={styles.maincontainer}>
         <div className={styles.leftContainer}>
-          {isLoggedIn && post[0]._id ? (
+          {isLoggedIn ? (
            post
               .slice()
               .reverse()
@@ -263,7 +263,7 @@ const YourHome = () => {
               ))
           ) : (
             <>
-            <div className={styles.loadingdiv}>hello</div>
+           <Load/>
             </>
           )}
         </div>
