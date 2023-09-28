@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const PostSchema = new mongoose.Schema({
   idea: {
     type: String,
-    required: true,
+   
   },
   userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    },
+  imageUrl:{
     type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    required: true,
+  
   }
 });
 

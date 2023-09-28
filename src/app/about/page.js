@@ -8,7 +8,7 @@ const About = () => {
 const userr = useSelector((state) => state.user);
 
   useEffect(() => {
-    
+     
   },[])
 
 

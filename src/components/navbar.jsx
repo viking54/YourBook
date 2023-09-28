@@ -22,9 +22,10 @@ const Navbar = () => {
       toast.success(response.data.message, {
         style: { backgroundColor: "darkgreen", color: "white" },
       });
-      dispatch(logout());
-      localStorage.clear();
       route.push("/login");
+      dispatch(logout());
+   
+     
     } catch (error) {
       toast.error(error.response.data.message);
     }

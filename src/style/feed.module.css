@@ -17,7 +17,11 @@
   border-radius: 13px;
   margin-bottom: 3vw;
 }
-
+.loadingdiv{
+  height:100vh;
+  width: 100px;
+  background-color: aqua;
+}
 .leftContainer {
   display: flex;
   flex-direction: column;
